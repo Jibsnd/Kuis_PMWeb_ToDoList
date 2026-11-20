@@ -1,0 +1,489 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Patrick Hand', cursive, sans-serif;
+}
+
+body {
+  background-color: #fafafa !important;
+  color: #1a1a1a !important;
+}
+
+/* Container utama mirip kartu sketsa */
+.sketch-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.sketch-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border: 1.5px solid #333333;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.sketch-header {
+  padding: 24px 24px 18px;
+  border-bottom: 1.5px solid #333333;
+  text-align: center;
+}
+
+.sketch-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  color: #1a1a1a !important;
+}
+
+.sketch-subtitle {
+  font-size: 1.15rem;
+  color: #555555;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #222222;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: transform 0.15s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Body */
+.sketch-body {
+  padding: 20px 24px 24px;
+}
+
+.sketch-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sketch-line-input {
+  flex: 1;
+  border: none;
+  border-bottom: 1.5px solid #cccccc;
+  padding: 8px 4px;
+  font-size: 1.25rem;
+  color: #1a1a1a !important;
+  outline: none;
+  background: transparent;
+}
+
+.sketch-line-input::placeholder {
+  color: #a3a3a3;
+}
+
+.sketch-line-input:focus {
+  border-bottom-color: #222222;
+}
+
+.sketch-plus-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dua kotak tengah */
+.sketch-dual-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.sketch-box-select,
+.sketch-box-btn {
+  border: 1.5px solid #444444;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 1.05rem;
+  color: #333333 !important;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.sketch-box-btn:hover,
+.sketch-box-select:hover {
+  background-color: #f3f3f3;
+}
+
+/* Task List & Empty State */
+.sketch-task-area {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 18px;
+  margin-bottom: 14px;
+}
+
+.sketch-empty {
+  text-align: center;
+  color: #888888;
+}
+
+.empty-main {
+  font-size: 1.45rem;
+  margin-bottom: 4px;
+}
+
+.empty-sub {
+  font-size: 1.15rem;
+}
+
+.sketch-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sketch-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1.5px solid #444444;
+  border-radius: 8px;
+  background: #ffffff;
+  gap: 8px;
+}
+
+.sketch-item.is-done .item-title {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+.sketch-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.sketch-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-title {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.item-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Warna Badge Prioritas & Status */
+.badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid #333333;
+  line-height: 1.2;
+}
+
+.badge-yellow {
+  background-color: #fef08a;
+  color: #713f12;
+}
+
+.badge-orange {
+  background-color: #fed7aa;
+  color: #7c2d12;
+}
+
+.badge-red {
+  background-color: #fecaca;
+  color: #7f1d1d;
+}
+
+.badge-green {
+  background-color: #bbf7d0;
+  color: #14532d;
+}
+
+.item-date {
+  font-size: 0.95rem;
+  color: #555555;
+  margin-left: 2px;
+}
+
+.sketch-item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Footer */
+.sketch-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 12px;
+}
+
+.sketch-clear-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1.5px solid #333333;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.sketch-clear-btn:hover {
+  background-color: #f3f3f3;
+}
+
+/* Halaman Detail & Modal */
+.detail-wrapper,
+.modal-overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 50;
+}
+
+.detail-card,
+.modal-box {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1.5px solid #333333;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.08);
+  color: #1a1a1a !important;
+}
+
+.detail-card {
+  display: flex;
+  gap: 24px;
+}
+
+.detail-left {
+  flex: 2;
+}
+
+.detail-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-item {
+  margin-bottom: 12px;
+}
+
+.detail-item h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555555;
+}
+
+.detail-item p {
+  font-size: 1.15rem;
+  color: #1a1a1a;
+}
+
+.description-box {
+  border: 1.5px solid #444444;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 80px;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #1a1a1a !important;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+  color: #1a1a1a !important;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 8px 10px;
+  border: 1.5px solid #444444;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  color-scheme: light;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.modal-actions,
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-primary,
+.btn-danger {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1.5px solid #333333;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #222222;
+  color: #ffffff !important;
+}
+
+.btn-danger {
+  background-color: #ffffff;
+  color: #1a1a1a !important;
+}
+
+.sketch-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.sketch-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.item-desc {
+  font-size: 0.98rem;
+  color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 480px) {
+  .sketch-wrapper {
+    padding: 12px 10px;
+    align-items: flex-start;
+  }
+
+  .sketch-header {
+    padding: 18px 16px 14px;
+  }
+
+  .sketch-title {
+    font-size: 2rem;
+  }
+
+  .sketch-body {
+    padding: 16px;
+  }
+
+  .sketch-dual-boxes {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .sketch-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sketch-item-actions {
+    justify-content: flex-end;
+    border-top: 1px dashed #e5e5e5;
+    padding-top: 6px;
+  }
+
+  .detail-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .modal-box {
+    padding: 18px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
